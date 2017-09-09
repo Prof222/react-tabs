@@ -262,7 +262,18 @@ export default class UncontrolledTabs extends Component {
       nodeAncestor = nodeAncestor.parentElement;
     } while (nodeAncestor);
 
-    return false;
+        return (
+      <div
+        {...attributes}
+        className={cx(className, {
+          [selectedClassName]: selected,
+        })}
+        role="tabpanel"
+        id={id}
+        aria-labelledby={tabId}
+      >
+        {forceRender || selected ? children : null}
+      </div>
   }
 
   render() {
