@@ -18,3 +18,12 @@ export function getPanelsCount(children) {
 
   return panelCount;
 }
+
+export function getFinalCount(children) {
+  let finalCount = 0;
+  deepForEach(children, child => {
+    if (isTabFinal(child)) tabCount++;
+  });
+
+  return finalCount;
+}
