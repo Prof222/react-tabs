@@ -33,7 +33,7 @@ describe('<TabList />', () => {
 
   it('should not allow overriding all default properties', () => {
     // eslint-disable-next-line jsx-a11y/aria-role
-    expectToMatchSnapshot(<TabList role="micro-tab" />);
+    expectToMatchSnapshot(<TabList role="tab" />);
   });
 
   it('should retain the default classnames for active and disabled tab', () => {
@@ -66,10 +66,10 @@ describe('<TabList />', () => {
     expectToMatchSnapshot(
       <Tabs defaultIndex={0}>
         <TabList>
-          <Tab selectedClassName="active" disabledClassName="disabled">
+          <Tab selectedClassName="active" disabledClassName="initial">
             Foo
           </Tab>
-          <Tab disabled selectedClassName="active" disabledClassName="disabled">
+          <Tab disabled selectedClassName="active" disabledClassName="initial">
             Bar
           </Tab>
         </TabList>
